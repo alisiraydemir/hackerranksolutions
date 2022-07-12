@@ -1,0 +1,30 @@
+# I would present you with two different solutions one with the traditional way and one with the list comprehension way.
+
+# Traditional:
+
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    count_Apple = 0
+    count_Oranges = 0
+    # go through the list and take every element and apply the below if statement
+    for apple in apples:
+        # Is this element in given region?
+        if s <= (int(apple) + a) <= t:
+            # then capture it
+            count_Apple += 1
+    for orange in oranges:
+        if s <= (int(orange) + b) <= t:
+            count_Oranges += 1
+    print(count_Apple)
+    print(count_Oranges)
+    
+ # List comprehensioan:
+ # This code exactly does the same thing as we wrote above. But this one is more elegant :).
+ def countApplesAndOranges(s, t, a, b, apples, oranges):
+    print(len([apple for apple in apples if s <= (int(apple) + a) <= t]))
+    print(len([orange for orange in oranges if s <= (int(orange) + b) <= t]))
+    
+    
+
+    
+
+ 
